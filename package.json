@@ -1,0 +1,17 @@
+{
+  "name": "moneyforward",
+  "version": "0.1.0",
+  "scripts": {
+    "update": "node --unhandled-rejections=strict update.js",
+    "sync": "node --unhandled-rejections=strict sync.js"
+  },
+  "author": "kishikawa katsumi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "csv-parse": "^5.0.4",
+    "dotenv": "^16.0.0",
+    "googleapis": "^100.0.0",
+    "playwright": "^1.21.1"
+  }
+}

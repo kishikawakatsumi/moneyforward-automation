@@ -1,0 +1,28 @@
+name: Update
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+env:
+  EMAIL: ${{ secrets.EMAIL }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+  CREDENTIALS: ${{ secrets.CREDENTIALS }}
+  REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+  SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+
+jobs:
+  update:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Update
+        run: |
+          set -ex
+
+          npm ci
+          npx playwright install-deps chromium
+          npm run update
