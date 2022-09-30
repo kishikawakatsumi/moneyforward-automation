@@ -8,7 +8,7 @@ exports.login = async (page) => {
 
   await page.click('a[href="/sign_in"]');
   await page
-    .locator(':nth-match(:text("メールアドレスでログイン"), 1)')
+    .locator(':nth-match(:text("Sign in with email address"), 1)')
     .click();
 
   await page.fill('input[type="email"]', process.env.EMAIL);
