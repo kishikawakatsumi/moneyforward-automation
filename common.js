@@ -5,14 +5,20 @@ const { google } = require("googleapis");
 
 exports.login = async (page) => {
   await page.goto("/");
-
   await page.click('a[href="/sign_in"]');
-  await page
-    .locator(':nth-match(:text("Sign in with email address"), 1)')
-    .click();
+  await page.waitForSelector(".logo");
+
+  await page.$$eval("a", (elements) => {
+    const signin = elements.filter((el) =>
+      el.href.startsWith("https://id.moneyforward.com/sign_in/email?")
+    )[0];
+    signin.click();
+  });
 
   await page.fill('input[type="email"]', process.env.EMAIL);
   await page.click('input[type="submit"]');
+
+  await page.waitForTimeout(500);
 
   await page.fill('input[type="password"]', process.env.PASSWORD);
   await page.click('input[type="submit"]');
