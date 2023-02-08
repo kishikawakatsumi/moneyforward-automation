@@ -8,7 +8,7 @@
   "author": "kishikawa katsumi",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.0.0",
     "csv-parse": "^5.0.4",
     "dotenv": "^16.0.0",
     "googleapis": "^100.0.0",
