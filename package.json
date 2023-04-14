@@ -11,7 +11,7 @@
     "axios": "^1.0.0",
     "csv-parse": "^5.0.4",
     "dotenv": "^16.0.0",
-    "googleapis": "^116.0.0",
+    "googleapis": "^118.0.0",
     "playwright": "^1.21.1"
   }
 }
